@@ -1,0 +1,2 @@
+# SpringBootRESTful
+使用SpringBoot构建的RESTful风格的接口，并使用Swagger2自动生成API文档和测试界面
