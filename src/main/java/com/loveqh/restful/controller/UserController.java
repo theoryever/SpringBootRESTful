@@ -10,6 +10,7 @@ import java.util.*;
 
 @RestController
 @RequestMapping("/v1/users")
+@Api(value = "用户接口文档", description = "用户信息的RESTful API")
 public class UserController {
 
     // 创建线程安全的Map
