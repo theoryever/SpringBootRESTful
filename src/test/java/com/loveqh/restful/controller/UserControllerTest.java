@@ -32,5 +32,4 @@ public class UserControllerTest extends AbstractTestNGSpringContextTests {
 //                .andExpect(content().string("[]"));
     }
 
-
 }

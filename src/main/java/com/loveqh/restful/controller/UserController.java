@@ -1,5 +1,6 @@
 package com.loveqh.restful.controller;
 
+import com.loveqh.restful.aop.Action;
 import com.loveqh.restful.entity.User;
 import com.loveqh.restful.exception.ServerErrorException;
 import io.swagger.annotations.*;
@@ -16,6 +17,7 @@ public class UserController {
     // 创建线程安全的Map
     static Map<Long, User> users = Collections.synchronizedMap(new HashMap<Long, User>());
 
+    @Action(value = "这是获取所有用户的接口", extra = "这是额外的信息，你可以任意指定信息")
     @ApiOperation(value = "获取所有用户", notes = "获取所有用户信息列表")
     @RequestMapping(value = "", method= RequestMethod.GET)
     public List<User> getUserList() {
@@ -32,6 +34,7 @@ public class UserController {
         return user;
     }
 
+    @Action(value = "这是获取单个用户的接口", extra = "这是额外的信息，你可以任意指定信息")
     @ApiOperation(value = "获取指定id的用户", notes = "获取指定id的用户")
     @ApiImplicitParam(name = "id", value = "要查询的用户id", allowableValues = "range[0, 10)", required = true, dataType = "Long", paramType = "path")
     @RequestMapping(value="/{id}", method=RequestMethod.GET)
