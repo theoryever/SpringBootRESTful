@@ -17,6 +17,11 @@ public class UserController {
     // 创建线程安全的Map
     static Map<Long, User> users = Collections.synchronizedMap(new HashMap<Long, User>());
 
+    @GetMapping("/test")
+    public String test() {
+        return "test devtools restart succeed!!!";
+    }
+
     @Action(value = "这是获取所有用户的接口", extra = "这是额外的信息，你可以任意指定信息")
     @ApiOperation(value = "获取所有用户", notes = "获取所有用户信息列表")
     @RequestMapping(value = "", method= RequestMethod.GET)
